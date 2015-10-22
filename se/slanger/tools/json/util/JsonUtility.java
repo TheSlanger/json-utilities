@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.MessageFormat;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -14,10 +15,16 @@ import org.json.JSONObject;
  */
 public class JsonUtility {
 
+    public static JSONArray getJsonArrayFromFile(String filepath) throws Exception {
+        String json = getJsonStringFromFile(filepath);
+        JSONArray jsona = new JSONArray(json);
+        return jsona;
+    }
+
     public static JSONObject getJsonObjectFromFile(String filepath) throws Exception {
         String json = getJsonStringFromFile(filepath);
-        JSONObject ojson = new JSONObject(json);
-        return ojson;
+        JSONObject jsono = new JSONObject(json);
+        return jsono;
     }
 
     public static String getJsonStringFromFile(String filepath) throws Exception {
