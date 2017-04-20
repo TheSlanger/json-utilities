@@ -81,6 +81,7 @@ public class JsonUtility {
 
    private static void writeToStream(BufferedOutputStream bos, java.lang.StringBuilder buffer) throws IOException {
       bos.write(buffer.toString().getBytes());
+      bos.flush();
    }
 
 }
